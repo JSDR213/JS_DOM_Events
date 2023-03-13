@@ -1,4 +1,4 @@
-### SEIR 123
+### JSDR 123
 
 # DOM EVENTS
 
@@ -96,7 +96,7 @@ elem.on(STRING, CALLBACK)
 
 ```javascript
 btn.addEventListener('click', () => {
-  document.body.append('It seems as if it has been clicked!')
+  document.body.append('I have been clicked!')
 })
 ```
 
@@ -112,7 +112,7 @@ Separate function, not inside the listener:
 
 ```javascript
 const addText = () => {
-  document.body.append('It seems as if it has been clicked!')
+  document.body.append('I have been clicked!')
 }
 ```
 
@@ -123,6 +123,36 @@ btn.addEventListener('click', addText)
 ```
 
 With a named function, we can use the same handler for more than one DOM element.
+
+
+But there are some serious limits to this 'document.body.append' method, as we can only target one thing at a time. Lets take it to the next step. Create a text element in your HTML, give it an ID, and leave it blank
+
+```html
+<h2 id="title> </h2>
+```    
+
+
+Now lets update our function to specifically add text to this element by working with the InnerText method of DOM Manipulation!
+
+
+```javascript
+const addText = () => {
+  let title = document.querySelector("#title")
+  title.innerText = 'I have been clicked!'
+}
+```
+Now we can style and work with these elements as we'd like. We can even make these dynamic with our other JS methods
+
+
+```javascript
+
+let name = prompt('what is your name?')
+
+const addText = () => {
+  let title = document.querySelector("#title")
+  title.innerText = `hello ${name}!`
+}
+```
 
 ### Referenced Function
 
@@ -155,7 +185,7 @@ Let's do something fancier, and toggle the background-color of the page using `.
 
 ```javascript
 const changeClass = () => {
-  document.body.classList.toggle('black')
+  document.body.classList.toggle('red')
 }
 
 btn.addEventListener('click', changeClass)
@@ -164,10 +194,13 @@ btn.addEventListener('click', changeClass)
 CSS:
 
 ```css
-.black {
-  background-color: black;
+.red {
+  background-color: red;
 }
 ```
+
+
+Lets take this a few steps further working with some other CSS properties, including Display, Font Color, and others!
 
 ## Lesson Recap
 
