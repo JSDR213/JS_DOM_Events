@@ -16,8 +16,9 @@ By the end of this lesson, you'll be able to add real functionality to our HTML 
 
 ## Getting Started
 
-- Fork and Clone
+- Fork this lesson
 - Open this folder in VsCode
+- Create an HTML, CSS, and JS file
 
 ## Lesson objectives
 
